@@ -40,8 +40,18 @@ public class Problem
         }
     }
 
-	public void Solution() //typ zwracany - result
+	public List<Item> Solution() //typ zwracany - result
     {
-		listOfItems.Sort()
+		List<Item> result = new List<Item>();
+		//listOfItems.Sort();
+		foreach(Item i in listOfItems)
+        {
+			if(i.weight < capacity)
+            {
+				result.Add(i);
+				i.inOrOut = true;
+            }
+        }
+		return result;
     }
 }

@@ -10,13 +10,21 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            Random random = new Random(3);
-            int a = random.Next(29); 
-            Console.WriteLine(a);
+            Problem p = new Problem();
+            List<Item> items = new List<Item>();
+            Console.WriteLine("Write the capacity of a bag: ");
+            p.capacity = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Write the number of items: ");
+            p.numberOfElements = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Write the seed number: ");
+            p.seed = Convert.ToInt32(Console.ReadLine());
+            p.Elements();
+            items = p.Solution();
+            foreach(Item i in items)
+            {
+                Console.WriteLine(i.ToString());
+            }
             Console.ReadLine();
         }
     }
 }
-// klasa na przedmiot - konstruktor
-// klasa na rezultat
-// klasa na problem - dodawanie przedmiotu - seed wybierany tutaj
