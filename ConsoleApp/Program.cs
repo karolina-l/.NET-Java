@@ -10,6 +10,13 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
+            Random random = new Random(3);
+            int a = random.Next(29); 
+            Console.WriteLine(a);
+            Console.ReadLine();
         }
     }
 }
+// klasa na przedmiot - konstruktor
+// klasa na rezultat
+// klasa na problem - dodawanie przedmiotu - seed wybierany tutaj
