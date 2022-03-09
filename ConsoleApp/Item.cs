@@ -21,6 +21,7 @@ public class Item
 	}
 	public Item(int w, int v, int i)
     {
+		if (v == 0) v++;
 		weightToValue = w / v;
 		weight = w;
 		value = v;
@@ -33,6 +34,6 @@ public class Item
 		string s = "";
 		if (inOrOut) s = " is in the bag ";
 		else s = "is not in the bag ";
-		return "Item no " + id + s + "\n";
+		return "Item no " + id + ", weight: " + weight + s + "\n";
 	}
 }

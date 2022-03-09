@@ -46,10 +46,11 @@ public class Problem
 		//listOfItems.Sort();
 		foreach(Item i in listOfItems)
         {
-			if(i.weight < capacity)
+			if(i.weight <= capacity)
             {
 				result.Add(i);
 				i.inOrOut = true;
+				capacity -= i.weight;
             }
         }
 		return result;
