@@ -34,8 +34,8 @@ public class Problem
 
 		for (int i = 0; i < numberOfElements; i++)
         {
-			wv[0] = random.Next(capacity-1);
-			wv[1] = random.Next(capacity-1);
+			wv[0] = random.Next(capacity-2)+1;
+			wv[1] = random.Next(capacity-2)+1;
 			listOfItems.Add(new Item(wv[0], wv[1], i));
         }
     }
@@ -43,10 +43,10 @@ public class Problem
 	public List<Item> Solution() //typ zwracany - result
     {
 		List<Item> result = new List<Item>();
-		//listOfItems.Sort();
+        listOfItems.Sort((x,y) => y.valueToWeight.CompareTo(x.valueToWeight));
 		foreach(Item i in listOfItems)
         {
-			if(i.weight <= capacity)
+			if (i.weight <= capacity)
             {
 				result.Add(i);
 				i.inOrOut = true;

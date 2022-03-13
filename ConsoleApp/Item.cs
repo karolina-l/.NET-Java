@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 public class Item
 {
-	public int weightToValue;
+	public float valueToWeight;
 	public int weight;
 	public int value;
 	public int id;
 	public bool inOrOut;
 	public Item()
 	{
-		weightToValue = 0;
+		valueToWeight = 0;
 		weight = 0;
 		value = 0;
 		id = 0;
@@ -21,8 +21,7 @@ public class Item
 	}
 	public Item(int w, int v, int i)
     {
-		if (v == 0) v++;
-		weightToValue = w / v;
+		valueToWeight = (float)v / (float)w;
 		weight = w;
 		value = v;
 		id = i;
@@ -34,6 +33,6 @@ public class Item
 		string s = "";
 		if (inOrOut) s = " is in the bag ";
 		else s = "is not in the bag ";
-		return "Item no " + id + ", weight: " + weight + s + "\n";
+		return "Item no " + id + ", weight: " + weight+ ", value: " + value + " "+ s + "\n";
 	}
 }
