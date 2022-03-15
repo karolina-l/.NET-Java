@@ -55,4 +55,11 @@ public class Problem
         }
 		return result;
     }
+	public void WriteAll(List<Item> result)
+    {
+		foreach (Item i in result)
+		{
+			Console.WriteLine(i.ToString());
+		}
+	}
 }
