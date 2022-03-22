@@ -26,12 +26,12 @@ public class Item
 		value = v;
 		id = i;
 		inOrOut = false;
-    } //tostring przeciążone
+    }
 
 	public override string ToString()
 	{
 		string s = "";
-		if (inOrOut) s = " is in the bag ";
+		if (inOrOut) s = "is in the bag ";
 		else s = "is not in the bag ";
 		return "Item no " + id + ", weight: " + weight+ ", value: " + value + " "+ s + "\n";
 	}

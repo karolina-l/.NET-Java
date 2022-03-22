@@ -34,13 +34,13 @@ public class Problem
 
 		for (int i = 0; i < numberOfElements; i++)
         {
-			wv[0] = random.Next(capacity-2)+1;
-			wv[1] = random.Next(capacity-2)+1;
+			wv[0] = random.Next(capacity)+1;
+			wv[1] = random.Next(capacity)+1;
 			listOfItems.Add(new Item(wv[0], wv[1], i));
         }
     }
 
-	public List<Item> Solution() //typ zwracany - result
+	public List<Item> Solution()
     {
 		List<Item> result = new List<Item>();
         listOfItems.Sort((x,y) => y.valueToWeight.CompareTo(x.valueToWeight));
